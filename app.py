@@ -122,24 +122,58 @@ if "login" not in st.session_state:
 if not st.session_state.login:
 
     col_c, col_m, col_d = st.columns([1, 1.2, 1])
+
     with col_m:
+
+        # Encabezado centrado
+        st.markdown(
+            """
+            <div style="text-align: center;">
+            """,
+            unsafe_allow_html=True
+        )
+
         st.image("logo.png", width=160)
-        st.markdown("## Sistema Predictivo de Inventarios")
-        st.markdown("**Chaccha Destilería S.R.L. — Huaraz, Perú**")
+
+        st.markdown(
+            """
+            <h2>Sistema Predictivo de Inventarios</h2>
+            <p><b>Chaccha Destilería S.R.L. — Huaraz, Perú</b></p>
+            """,
+            unsafe_allow_html=True
+        )
+
+        st.markdown(
+            """
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
         st.divider()
 
-        usuario    = st.text_input("Usuario", placeholder="Ingresa tu usuario")
-        contraseña = st.text_input("Contraseña", type="password", placeholder="••••••••")
+        # Campos de acceso
+        usuario = st.text_input(
+            "Usuario",
+            placeholder="Ingresa tu usuario"
+        )
+
+        contraseña = st.text_input(
+            "Contraseña",
+            type="password",
+            placeholder="••••••••"
+        )
 
         if st.button("Ingresar", use_container_width=True):
+
             if usuario == "Administrador" and contraseña == "Chaccha2026":
                 st.session_state.login = True
                 st.rerun()
+
             else:
                 st.error("Usuario o contraseña incorrectos.")
 
     st.stop()
-
 
 # ================================================================
 #  SIDEBAR
@@ -735,4 +769,5 @@ elif opcion == "ℹ️  Acerca del sistema":
 
     st.divider()
     st.caption("Desarrollado por: Cristina Ximena Ramirez Huatuco")
+
     
