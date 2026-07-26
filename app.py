@@ -116,17 +116,14 @@ st.markdown(f"""
 #  LOGIN
 # ================================================================
 
-if "login" not in st.session_state:
-    st.session_state.login = False
-
 if not st.session_state.login:
 
     col_c, col_m, col_d = st.columns([1, 1.2, 1])
 
     with col_m:
 
-    # Centrar logo
-    col_logo1, col_logo2, col_logo3 = st.columns([1, 1, 1])
+        # Centrar logo
+        col_logo1, col_logo2, col_logo3 = st.columns([1, 1, 1])
 
         with col_logo2:
             st.image("logo.png", width=160)
@@ -156,12 +153,16 @@ if not st.session_state.login:
         )
 
         if st.button("Ingresar", use_container_width=True):
+
             if usuario == "Administrador" and contraseña == "Chaccha2026":
                 st.session_state.login = True
                 st.rerun()
+
             else:
                 st.error("Usuario o contraseña incorrectos.")
+
     st.stop()
+    
 
 # ================================================================
 #  SIDEBAR
