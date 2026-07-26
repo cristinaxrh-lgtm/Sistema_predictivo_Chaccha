@@ -116,19 +116,21 @@ st.markdown(f"""
 #  LOGIN
 # ================================================================
 
+if "login" not in st.session_state:
+    st.session_state.login = False
+
+
 if not st.session_state.login:
 
     col_c, col_m, col_d = st.columns([1, 1.2, 1])
 
     with col_m:
 
-        # Centrar logo
         col_logo1, col_logo2, col_logo3 = st.columns([1, 1, 1])
 
         with col_logo2:
             st.image("logo.png", width=160)
 
-        # Centrar textos
         st.markdown(
             """
             <div style="text-align:center;">
@@ -162,7 +164,6 @@ if not st.session_state.login:
                 st.error("Usuario o contraseña incorrectos.")
 
     st.stop()
-    
 
 # ================================================================
 #  SIDEBAR
