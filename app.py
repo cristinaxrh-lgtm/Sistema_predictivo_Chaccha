@@ -128,39 +128,39 @@ if not st.session_state.login:
     # Centrar logo
     col_logo1, col_logo2, col_logo3 = st.columns([1, 1, 1])
 
-    with col_logo2:
-        st.image("logo.png", width=160)
+        with col_logo2:
+            st.image("logo.png", width=160)
 
-    # Centrar textos
-    st.markdown(
-        """
-        <div style="text-align:center;">
-            <h2>Sistema Predictivo de Inventarios</h2>
-            <p><b>Chaccha Destilería S.R.L. — Huaraz, Perú</b></p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+        # Centrar textos
+        st.markdown(
+            """
+            <div style="text-align:center;">
+                <h2>Sistema Predictivo de Inventarios</h2>
+                <p><b>Chaccha Destilería S.R.L. — Huaraz, Perú</b></p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-    st.divider()
+        st.divider()
 
-    usuario = st.text_input(
-        "Usuario",
-        placeholder="Ingresa tu usuario"
-    )
+        usuario = st.text_input(
+            "Usuario",
+            placeholder="Ingresa tu usuario"
+        )
 
-    contraseña = st.text_input(
-        "Contraseña",
-        type="password",
-        placeholder="••••••••"
-    )
+        contraseña = st.text_input(
+            "Contraseña",
+            type="password",
+            placeholder="••••••••"
+        )
 
-    if st.button("Ingresar", use_container_width=True):
-        if usuario == "Administrador" and contraseña == "Chaccha2026":
-            st.session_state.login = True
-            st.rerun()
-        else:
-            st.error("Usuario o contraseña incorrectos.")
+        if st.button("Ingresar", use_container_width=True):
+            if usuario == "Administrador" and contraseña == "Chaccha2026":
+                st.session_state.login = True
+                st.rerun()
+            else:
+                st.error("Usuario o contraseña incorrectos.")
     st.stop()
 
 # ================================================================
